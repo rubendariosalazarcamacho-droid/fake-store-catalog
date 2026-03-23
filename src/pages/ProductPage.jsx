@@ -13,7 +13,7 @@ function ProductPage() {
                 const {data} = await axios.get("https://fakestoreapi.com/products") //hago la petición a la API de la data productos
                 setProductos(data)
             } catch (error){
-                console.log("Se produjo un error al cargare los datos", error)
+                console.log("Se produjo un error al cargar los datos", error)
             }            
         }
         traerProductos()

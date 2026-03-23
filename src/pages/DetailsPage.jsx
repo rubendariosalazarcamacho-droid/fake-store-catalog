@@ -5,12 +5,14 @@ import axios from "axios";
 function DetailsPage() {
     const { id } = useParams()
     const [producto, setProducto] = useState() //producto guarda los datos del producto que tenbga el id === id (capturado con useParams)
+    const [cargando, setCargando] = useState(true)
 
     useEffect(() => {
         async function traerDatosProducto() {
             try {
                 const { data } = await axios.get(`https://fakestoreapi.com/products/${id}`)
                 setProducto(data)
+                setCargando(false)
             } catch (error) {
                 console.log("Error a cargar producto...", error)
             }
@@ -18,10 +20,14 @@ function DetailsPage() {
         }
         traerDatosProducto()
     },[id])
-
-    if(!producto){
-        return(<p>Cargando detalles del producto...</p>)
-    }
+    if (cargando) {
+    return (
+        <div className="flex flex-col items-center justify-center h-screen gap-4">
+            <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+            <p className="text-gray-600 font-medium animate-pulse">Cargando producto...</p>
+        </div>
+    )
+}   
 
 
     return (
