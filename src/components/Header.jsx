@@ -9,7 +9,7 @@ function Header() {
             <nav className="flex justify-around font-bold hover:text-yellow-300 lg:text-2xl">
                 <Link to={"/"}><p>Home</p>
                 </Link>
-                <p>Categories</p>
+                {/* <p>Categories</p> */}
             </nav>
 
         </div>           
