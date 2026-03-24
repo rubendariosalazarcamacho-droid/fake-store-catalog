@@ -21,12 +21,11 @@ function ListaCategorias() {
 
     return (
         <>
-            <h1>lista de categorias</h1>
-            <div>
+            <div className="grid grid-cols-2 px-6 gap-x-4 gap-y-1 md:grid-cols-4">
                 {categorias.map((categoria, index) => (
                     <Link key={index} to={`/categoria/${categoria}`}>
-                        <div >
-                            <p className="capitalize">{categoria}</p>
+                        <div className="border-2 rounded-2xl border-gray-400 bg-blue-500 text-white hover:bg-blue-700 hover:cursor-pointer">
+                            <p className="capitalize text-xs font-bold text-center lg:text-2xl">{categoria}</p>
                         </div>
                         
                     </Link> 

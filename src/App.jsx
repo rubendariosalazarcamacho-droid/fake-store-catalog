@@ -13,8 +13,10 @@ function App() {
 
   return (
     <>
-    <Header/>
-    <ListaCategorias/>
+    <div className='flex flex-col gap-2'>
+      <Header/>
+      <ListaCategorias/>
+    </div>
 
       <Routes>
         <Route path="/" element={<ProductPage/>} />
