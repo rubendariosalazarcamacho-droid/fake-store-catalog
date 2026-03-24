@@ -32,17 +32,22 @@ function DetailsPage() {
 
     return (
         <>
-            <h2 className="text-xl text-blue-700 font-medium mx-4 mt-3">{producto.title}</h2>
-            <div className="p-6">
-                <div className="aspect-[3/4] bg-blue-400"><img className="w-full h-full object-contain bg-gray-200" src={producto.image} alt="" /></div>
-                <div className="flex justify-between">
-                    <p className="text-xl text-blue-600 font-medium">${producto.price}</p>
-                    <div className="flex gap-1 items-center">
-                        <p className="text-xl font-medium">{producto.rating.rate}</p>
-                        <img className="w-5 h-5" src="/images/star.svg" alt="star" />
+            <h2 className=" text-xl text-blue-700 font-medium mx-4 mt-3 md:hidden">{producto.title}</h2>
+            <div className="flex flex-col p-6 md:grid grid-cols-2">
+                <div className="md:w-full p-4">
+                    <div className="aspect-[3/4] bg-blue-400"><img className="w-full h-full object-contain bg-gray-200" src={producto.image} alt="" /></div>
+                    <div className="flex justify-between">
+                        <p className="text-xl text-blue-600 font-medium">${producto.price}</p>
+                        <div className="flex gap-1 items-center">
+                            <p className="text-xl font-medium">{producto.rating.rate}</p>
+                            <img className="w-5 h-5" src="/images/star.svg" alt="star" />
+                        </div>
                     </div>
+
                 </div>
-                <div>
+
+                <div className="md: w-full md:flex flex-col gap-4">
+                    <h2 className="hidden text-xl text-blue-700 font-medium mx-4 mt-3 md:flex md:mx-0">{producto.title}</h2>
                     <p className=" font-bold">Description:</p>
                     <p >{producto.description}</p>
                     <p className=" font-bold">Category:</p>

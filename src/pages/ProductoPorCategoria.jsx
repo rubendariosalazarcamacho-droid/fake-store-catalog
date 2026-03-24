@@ -23,7 +23,7 @@ function ProductosPorCategoria() {
     return (
         <>            
             <div>
-                <h1>Category: {category}</h1>
+                <h1 className="mt-2 ml-3 text-2xl text-blue-700">Category: {category}</h1>
                 <div className="grid grid-cols-2 p-2 gap-y-6 gap-x-3 md:grid-cols-3 lg:grid-cols-4">
                 {productos.map((producto) => (
 
