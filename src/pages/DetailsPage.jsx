@@ -19,34 +19,39 @@ function DetailsPage() {
 
         }
         traerDatosProducto()
-    },[id])
+    }, [id])
     if (cargando) {
-    return (
-        <div className="flex flex-col items-center justify-center h-screen gap-4">
-            <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
-            <p className="text-gray-600 font-medium animate-pulse">Cargando producto...</p>
-        </div>
-    )
-}   
+        return (
+            <div className="flex flex-col items-center justify-center h-screen gap-4">
+                <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+                <p className="text-gray-600 font-medium animate-pulse">Cargando producto...</p>
+            </div>
+        )
+    }
 
 
     return (
         <>
-            <h2>Pagina detalle producto</h2>
-            <div>
-                <div className=" bg-blue-400"><img className="w-full h-full object-contain bg-amber-400" src={producto.image} alt="" /></div>
+            <h2 className="text-xl text-blue-700 font-medium mx-4 mt-3">{producto.title}</h2>
+            <div className="p-6">
+                <div className="aspect-[3/4] bg-blue-400"><img className="w-full h-full object-contain bg-gray-200" src={producto.image} alt="" /></div>
+                <div className="flex justify-between">
+                    <p className="text-xl text-blue-600 font-medium">${producto.price}</p>
+                    <div className="flex gap-1 items-center">
+                        <p className="text-xl font-medium">{producto.rating.rate}</p>
+                        <img className="w-5 h-5" src="/images/star.svg" alt="star" />
+                    </div>
+                </div>
                 <div>
-                    <p>${producto.price}</p>
-                    <p>{producto.rating.rate}</p>
+                    <p className=" font-bold">Description:</p>
+                    <p >{producto.description}</p>
+                    <p className=" font-bold">Category:</p>
+                    <p>{producto.category}</p>
+                    <p className="bg-blue-700 w-[50%] text-white font-bold h-10 mt-2 flex justify-center items-center rounded-2xl">Agregar al carrito</p>
                 </div>
             </div>
-            
-            <div>
-                <p>{producto.title}</p>                
-                <p>{producto.description}</p>
-                <p>${producto.category}</p>
-                <p>Agregar al carrito</p>
-            </div>
+
+
             {console.log(producto)}
 
         </>
